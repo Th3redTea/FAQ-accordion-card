@@ -74,6 +74,7 @@ details {
   padding: 5px 0;
   border-bottom: var(--light-grayish-blue) 2px solid;
   margin: 10px 0;
+  transition: all 0.3s ease;
 }
 
 #summary {
@@ -81,6 +82,7 @@ details {
   justify-content: space-between;
   margin-bottom: 13px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 details[open] {
