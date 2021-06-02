@@ -28,7 +28,6 @@ body {
   position: relative;
   background-color: white;
   width: 75%;
-  height: 500px;
   margin: 60px auto;
   border-radius: 20px;
   display: grid;
@@ -39,6 +38,7 @@ body {
   .white-container {
     display: flex;
     flex-direction: column;
+    height: 600px;
   }
 }
 
@@ -69,27 +69,31 @@ body {
   font-size: 1.5rem;
   width: 80%;
 }
-
-details {
+.text details {
   padding: 5px 0;
   border-bottom: var(--light-grayish-blue) 2px solid;
   margin: 10px 0;
   transition: all 0.3s ease;
 }
-
-#summary {
+.text #summary {
   display: flex;
   justify-content: space-between;
   margin-bottom: 13px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
-details[open] {
+.text details[open] {
   padding-bottom: 15px;
 }
-details[open] #summary {
+.text details[open] #summary {
   font-weight: bold;
+}
+@media screen and (max-width: 920px) {
+  .text {
+    border: red 2px solid;
+    margin: 0 auto;
+    height: 80%;
+  }
 }
 
 #desktop-box {
@@ -101,8 +105,8 @@ details[open] #summary {
 .illustrations {
   grid-area: ils;
   height: 100%;
+  height: 500px;
   position: relative;
-  overflow: hidden;
 }
 .illustrations .woman {
   position: relative;
@@ -111,11 +115,24 @@ details[open] #summary {
 }
 .illustrations .woman #desktop-woman {
   position: absolute;
-  top: 65px;
+  top: 57px;
   left: -85px;
+  visibility: visible;
 }
 .illustrations .woman #mobile-woman {
-  display: none;
+  visibility: hidden;
+}
+@media screen and (max-width: 920px) {
+  .illustrations .woman #mobile-woman {
+    visibility: visible;
+    border: red 2px solid;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+  }
+  .illustrations .woman #desktop-woman {
+    visibility: hidden;
+  }
 }
 .illustrations .pattern {
   overflow: hidden;
@@ -126,5 +143,34 @@ details[open] #summary {
   top: -25rem;
 }
 .illustrations .pattern #mobile-pattern {
-  display: none;
+  visibility: hidden;
+  height: 0;
+}
+@media screen and (max-width: 920px) {
+  .illustrations .pattern #mobile-pattern {
+    visibility: visible;
+    height: auto;
+    border: red 2px solid;
+    position: absolute;
+  }
+  .illustrations .pattern #desktop-pattern {
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 920px) {
+  .illustrations {
+    border: red 2px solid;
+    margin: 0 auto;
+    width: 90%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  #desktop-box {
+    display: none;
+  }
 }
